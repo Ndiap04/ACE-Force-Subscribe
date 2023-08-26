@@ -8,10 +8,6 @@ from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant, Usern
 UPDATES_CHANNEL = C.UPDATES_CHANNEL
 logging.basicConfig(level=logging.INFO)
 
-@Client.on_message(filters.incoming & filters.command(['start']) & filters.private)
-async def _start(client, message):
-await event.delete()
-
 @Client.on_callback_query(help_callback_filter)
 async def help_answer(client, callback_query):
     chat_id = callback_query.from_user.id
