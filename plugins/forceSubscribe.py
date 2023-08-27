@@ -54,7 +54,7 @@ async def _check_member(client, message):
       except UserNotParticipant:
         try:
           sent_message = await message.reply_text(
-              " {}\n\nAnda belum bergabung dengan Channel Kami.\nSilakan bergabung menggunakan tombol di bawah ini dan tekan tombol Suarakan Saya untuk membunyikan suara Anda sendiri.\nJika anda tidak dapat mengirim pesan sangat lama silahkan hubungi admin agar kamu dapat mengirim pesan, jika anda sudah dibuka anda wajib untuk memasuki channel".format(message.from_user.mention, channel, channel),
+              " {} **Kamu belum bergabung dengan saluran kami** @{channel}. silakan bergabung menggunakan tombol di bawah ini dan tekan tombol suarakan saya untuk membunyikan suara anda sendiri.".format(message.from_user.mention, channel, channel),
               disable_web_page_preview=True,
              reply_markup=InlineKeyboardMarkup(
             [
