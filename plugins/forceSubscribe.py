@@ -62,9 +62,6 @@ async def _check_member(client, message):
                     InlineKeyboardButton("⚠️ Join Channel", url=channel_url)
                 ],
                 [
-                    InlineKeyboardButton("⚠️ Join Channel", url=channel_url)
-                ],
-                [
                     InlineKeyboardButton("✅ UnMute Me", callback_data="onUnMuteRequest")
                 ]
             ]
