@@ -9,7 +9,7 @@ from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant, Usern
 UPDATES_CHANNEL = C.UPDATES_CHANNEL
 logging.basicConfig(level=logging.INFO)
 
-DB_URL = C.DATABASE_URL
+DB_URL = C.DB_URL
 DB_NAME = C.DATABASE_NAME
 
 LOG_CHANNEL = C.LOG_CHANNEL
