@@ -81,7 +81,7 @@ async def _start(client, message):
         )
 
 
-@app.on_message(filters.incoming & filters.command(['start']) & filters.private)
+@Client.on_message(filters.incoming & filters.command(['start']) & filters.private)
 async def _source_code(client, message):
     chat_id = message.from_user.id
     # Adding to DB
