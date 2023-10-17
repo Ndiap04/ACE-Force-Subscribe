@@ -2,6 +2,7 @@ import logging
 import os
 from Config import Messages as tr
 from Config import Config as C
+from bot import *
 from pyrogram import Client, filters
 from database.database import Database
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
