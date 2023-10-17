@@ -9,7 +9,7 @@ class Config():
   LOG_CHANNEL = os.environ.get("LOG_CHANNEL", "-1001819788108")
   
   # PostgresSQL DB URL (Use ElephantSQL)
-  DATABASE_URL = os.environ.get("DATABASE_URL", "")
+  DB_URL = os.environ.get("DB_URL", "")
   DATABASE_NAME = os.environ.get("DATABASE_NAME", "rosebot")
   
   # API & HASH (Use my.telegram.org)
