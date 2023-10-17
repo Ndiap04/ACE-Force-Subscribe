@@ -75,24 +75,17 @@ async def _start(client, message):
 @Client.on_message(filters.incoming & filters.command(['source_code6']) & filters.private)
 async def _source_code(client, message):
     await client.send_message(message.chat.id,
-        text=tr.SC_MSG.format(message.from_user.first_name, message.from_user.id),
-	reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton("🌐 Source Code 🌐", url="https://t.me/ACE_ML")
-                ],
-                [
-                    InlineKeyboardButton("🌟 Join Channel", url="https://t.me/ACE_ML"),
-                    InlineKeyboardButton("💬 Support Group", url="https://t.me/ACE_OffTopic")
-                ],
-                [
-                    InlineKeyboardButton("👨‍💻 Developer 🧑‍💻", url="https://t.me/FlashSpeedster1")
-                ]
-            ]
-        ),
-        parse_mode="markdown",
-        reply_to_message_id=message.message_id
+    chat_id = message.from_user.id
+    # Adding to DB
+    if not await db.is_user_exist(chat_id):
+        data = await bot.get_me()
+        BOT_USERNAME = data.username
+        await db.add_user(chat_id)
+        await bot.send_message(
+            LOG_CHANNEL,
+            f"#NEWUSER: \n\nNew User [{message.from_user.first_name}](tg://user?id={message.from_user.id}) started @{BOT_USERNAME} !!",
         )
+        return
 
 @Client.on_message(filters.incoming & filters.command(['helpmemk']) & filters.private)
 async def _help(client, message):
