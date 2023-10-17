@@ -6,10 +6,12 @@ class Config():
 
   # Bot Updates Channel Username (without @)
   UPDATES_CHANNEL = os.environ.get("UPDATES_CHANNEL", "ACE_ML")
-
+  LOG_CHANNEL = os.environ.get("LOG_CHANNEL", "")
+  
   # PostgresSQL DB URL (Use ElephantSQL)
   DATABASE_URL = os.environ.get("DATABASE_URL", "")
-
+  DATABASE_NAME = os.environ.get("DATABASE_NAME", "")
+  
   # API & HASH (Use my.telegram.org)
   APP_ID = os.environ.get("APP_ID", 123456)
   API_HASH = os.environ.get("API_HASH", "abcdefgh")
