@@ -8,6 +8,11 @@ from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant, Usern
 UPDATES_CHANNEL = C.UPDATES_CHANNEL
 logging.basicConfig(level=logging.INFO)
 
+DB_URL = C.DATABASE_URL
+DB_NAME = C.DATABASE_NAME
+
+db = Database(DB_URL, DB_NAME)
+
 @Client.on_message(filters.incoming & filters.command(['bottycu1']) & filters.private)
 async def _start(client, message):
     update_channel = UPDATES_CHANNEL
