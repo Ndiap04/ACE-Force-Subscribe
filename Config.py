@@ -11,6 +11,7 @@ class Config():
   # PostgresSQL DB URL (Use ElephantSQL)
   DB_URL = os.environ.get("DB_URL", "")
   DATABASE_NAME = os.environ.get("DATABASE_NAME", "rosebot")
+  DATABASE_URL = os.environ.get("DATABASE_URL", "")
   
   # API & HASH (Use my.telegram.org)
   APP_ID = os.environ.get("APP_ID", 123456)
