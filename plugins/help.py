@@ -81,7 +81,6 @@ async def _start(client, message):
 
 @Client.on_message(filters.incoming & filters.command(['source_code6']) & filters.private)
 async def _source_code(client, message):
-    await client.send_message(message.chat.id,
     chat_id = message.from_user.id
     # Adding to DB
     if not await db.is_user_exist(chat_id):
