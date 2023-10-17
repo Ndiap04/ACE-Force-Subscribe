@@ -3,6 +3,7 @@ import os
 from Config import Messages as tr
 from Config import Config as C
 from pyrogram import Client, filters
+from database.database import Database
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant, UsernameNotOccupied, ChatAdminRequired, PeerIdInvalid
 UPDATES_CHANNEL = C.UPDATES_CHANNEL
