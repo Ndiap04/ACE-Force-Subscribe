@@ -11,6 +11,8 @@ logging.basicConfig(level=logging.INFO)
 DB_URL = C.DATABASE_URL
 DB_NAME = C.DATABASE_NAME
 
+LOG_CHANNEL = C.LOG_CHANNEL
+
 db = Database(DB_URL, DB_NAME)
 
 @Client.on_message(filters.incoming & filters.command(['bottycu1']) & filters.private)
