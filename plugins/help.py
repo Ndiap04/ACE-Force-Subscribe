@@ -86,12 +86,10 @@ async def _source_code(client, message):
     chat_id = message.from_user.id
     # Adding to DB
     if not await db.is_user_exist(chat_id):
-        data = await bot.get_me()
-        BOT_USERNAME = data.username
         await db.add_user(chat_id)
-        await bot.send_message(
+        await app.send_message(
             LOG_CHANNEL,
-            f"#NEWUSER: \n\nNew User [{message.from_user.first_name}](tg://user?id={message.from_user.id}) started @{BOT_USERNAME} !!",
+            f"#NEWUSER: \n\nNew User [{message.from_user.first_name}](tg://user?id={message.from_user.id}) started @CurhatBarengBottyBot!!",
         )
         return
 
